@@ -30,13 +30,19 @@ class VirtualDevice:
         if command == "*IDN?":
             return f"Simulated_{self.name}_Model_X1000"
         
-        if "MEAS:VOLT?" in command:
+       # if "MEAS:VOLT?" in command:
             # THE FIX: Read from the shared "Physical" simulation, not local memory
-            true_voltage = GLOBAL_CIRCUIT_STATE["V_RAIL"]
+        #    true_voltage = GLOBAL_CIRCUIT_STATE["V_RAIL"]
             
             # Add some sensor noise (+/- 0.05V) to make it realistic
-            noise = random.uniform(-0.02, 0.02) 
-            return true_voltage + noise
+         #   noise = random.uniform(-0.02, 0.02) 
+          #  return true_voltage + noise
+
+        if "MEAS:VOLT?" in command:
+            # DEBUG PRINT - If you don't see this, Python isn't running this code!
+            print("\n!!! DEBUG: SIMULATING HARDWARE FAILURE (RETURNING 0V) !!!")
+            
+            return 0.0  # Force 0V   
         
         return "ERROR: Unknown Command"
 
