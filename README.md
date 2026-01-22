@@ -1,6 +1,6 @@
 # Automated Avionics HIL Verification Framework
 
-![Build Status](https://github.com/YOUR_USERNAME/avionics-hil-automation/actions/workflows/ci_pipeline.yml/badge.svg)
+![Build Status](https://github.com/Sruthi-ng/avionics-hil-automation/actions/workflows/ci_pipeline.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Testing](https://img.shields.io/badge/Test-Pytest-green)
 
